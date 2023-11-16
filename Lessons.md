@@ -1,5 +1,6 @@
 # Lessons Learned
-
+```
 1. Markup is a beautiful thing.
 2. ENTERYPOINT is a pain.
 3. run -t is your friend.
+```
