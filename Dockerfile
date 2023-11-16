@@ -45,8 +45,4 @@ RUN rm -rf /tmp/nagioscore-master && \
     rm -rf /tmp/nagios-plugins-master
 
 COPY startup.sh /startup.sh
-#CMD bash -C 'sh /startup.sh';'bash'
 ENTRYPOINT /startup.sh start && /bin/bash
-
-#ENTRYPOINT ["tail"]
-#CMD ["-f","/usr/local/nagios/var/nagios.log"]
