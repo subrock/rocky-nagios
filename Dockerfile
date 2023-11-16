@@ -1,4 +1,5 @@
-FROM rocky:latest
+FROM rockylinux:9.2
+
 LABEL maintainer="Karl Schroeder <karl@subrock.com>"
 
 ARG HTPASSWD=YOURPASSWORD
@@ -39,10 +40,17 @@ RUN ./tools/setup && \
     make install && \
     make install-root
 
+# Expose port so its available in desktop.
+EXPOSE 80
+
 # Finalize
 WORKDIR /tmp
 RUN rm -rf /tmp/nagioscore-master && \
     rm -rf /tmp/nagios-plugins-master
 
 COPY startup.sh /startup.sh
+#CMD bash -C 'sh /startup.sh';'bash'
 ENTRYPOINT /startup.sh start && /bin/bash
+
+#ENTRYPOINT ["tail"]
+#CMD ["-f","/usr/local/nagios/var/nagios.log"]
