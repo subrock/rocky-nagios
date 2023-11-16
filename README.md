@@ -3,7 +3,7 @@ Nagios Core on top of Rocky Linux 9.
 
 ## Run
 ```
-docker run --name rocky-nagios -d -t -p 8000:80 rocky-nagios
+docker run --name subrock/rocky-nagios -d -t -p 8000:80 rocky-nagios
 ```
 
 ## Compose
