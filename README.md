@@ -16,4 +16,5 @@ docker compose up -d
 ## Access
 ```
 http://localhost:8000/nagios/
+Login is nagiosadmin / YOURPASSWORD
 ```
